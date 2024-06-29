@@ -1,7 +1,13 @@
 import streamlit as st
 import spacy
 
-# Load the spaCy model
+# Caching model needs to be cache in function
+@st.cache_data
+def load_model(model_name):
+    # Load the spaCy model
+    nlp = spacy.load("model_name")
+    return nlp
+
 nlp = spacy.load("en_core_web_sm")
 
 def extract_entities(ent_types, text):
