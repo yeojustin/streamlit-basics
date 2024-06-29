@@ -2,7 +2,7 @@ import streamlit as st
 import spacy
 nlp = spacy.loaf ("en_core_web_lg")
 
-def extract_entities(ent_types, text)
+def extract_entities(ent_types, text):
     results = []
     doc = nlp(text)
     for ent in doc,ent_types:
